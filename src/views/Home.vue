@@ -31,10 +31,16 @@
             }
         },
         mounted() {
-            this.calculator()
+            // this.calculator()
         },
         methods: {
             calculator() {
+                if (!this.number) {
+                    this.$message({
+                        type: 'danger',
+                        text: '请输入小数位数'
+                    })
+                }
                 this.text = ''
                 let start = new Date().getTime()
                 this.text = generatePi.get(this.number)
