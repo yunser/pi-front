@@ -3,10 +3,16 @@
         <div slot="drawer">
             <ui-appbar title=""></ui-appbar>
             <ui-list @itemClick="toggle()">
-                <ui-list-item title="首页" to="/">
+                <ui-list-item title="计算任意位数 π 值" to="/">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
-                <ui-list-item title="Pi" to="/pi">
+                <ui-list-item title="记住圆周率训练" to="/pi">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
+                <ui-list-item title="在 π 中搜索" to="/search">
+                    <ui-icon slot="left" value="grade"/>
+                </ui-list-item>
+                <ui-list-item title="查找 π 的第几位" to="/index">
                     <ui-icon slot="left" value="grade"/>
                 </ui-list-item>
                 <ui-list-item title="关于" to="/about">

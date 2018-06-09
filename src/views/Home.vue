@@ -40,6 +40,7 @@
                         type: 'danger',
                         text: '请输入小数位数'
                     })
+                    return
                 }
                 this.text = ''
                 let start = new Date().getTime()

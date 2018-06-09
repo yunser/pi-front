@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 const Home = resolve => require(['@/views/Home'], resolve)
 const Pi = resolve => require(['@/views/Pi'], resolve)
+const Search = resolve => require(['@/views/Search'], resolve)
+const Index = resolve => require(['@/views/Index'], resolve)
 const About = resolve => require(['@/views/About'], resolve)
 const Help = resolve => require(['@/views/Help'], resolve)
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
@@ -17,6 +19,14 @@ let routes = [
     {
         path: '/pi',
         component: Pi
+    },
+    {
+        path: '/search',
+        component: Search
+    },
+    {
+        path: '/index',
+        component: Index
     },
     {
         path: '/about',
