@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const Home = resolve => require(['@/views/Home'], resolve)
+const Calculator = resolve => require(['@/views/Calculator'], resolve)
 const Pi = resolve => require(['@/views/Pi'], resolve)
 const Search = resolve => require(['@/views/Search'], resolve)
 const Index = resolve => require(['@/views/Index'], resolve)
@@ -15,6 +16,10 @@ let routes = [
     {
         path: '/',
         component: Home
+    },
+    {
+        path: '/calculator',
+        component: Calculator
     },
     {
         path: '/pi',

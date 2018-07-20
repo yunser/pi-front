@@ -27,11 +27,11 @@
                 result: '',
                 page: {
                     menu: [
-                        {
-                            type: 'icon',
-                            icon: 'help',
-                            to: '/help'
-                        }
+                        // {
+                        //     type: 'icon',
+                        //     icon: 'help',
+                        //     to: '/help'
+                        // }
                     ]
                 }
             }
