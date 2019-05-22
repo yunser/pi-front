@@ -1,27 +1,29 @@
 <template>
     <my-page title="记住圆周率训练">
-        <div class="input">{{ input }}<span class="help">?</span></div>
-        <div class="line">
-            <div class="key" @click="select('1')" :style="keyStyle('1')">1</div>
-            <div class="key" @click="select('2')" :style="keyStyle('2')">2</div>
-            <div class="key" @click="select('3')" :style="keyStyle('3')">3</div>
+        <div class="common-container container">
+            <div class="input">{{ input }}<span class="help">?</span></div>
+            <div class="line">
+                <div class="key" @click="select('1')" :style="keyStyle('1')">1</div>
+                <div class="key" @click="select('2')" :style="keyStyle('2')">2</div>
+                <div class="key" @click="select('3')" :style="keyStyle('3')">3</div>
+            </div>
+            <div class="line">
+                <div class="key" @click="select('4')" :style="keyStyle('4')">4</div>
+                <div class="key" @click="select('5')" :style="keyStyle('5')">5</div>
+                <div class="key" @click="select('6')" :style="keyStyle('6')">6</div>
+            </div>
+            <div class="line">
+                <div class="key" @click="select('7')" :style="keyStyle('7')">7</div>
+                <div class="key" @click="select('8')" :style="keyStyle('8')">8</div>
+                <div class="key" @click="select('9')" :style="keyStyle('9')">9</div>
+            </div>
+            <div class="line">
+                <div class="key"></div>
+                <div class="key" @click="select('0')" :style="keyStyle('0')">0</div>
+                <div class="key"></div>
+            </div>
+            <div class="score">得分：{{ score }}</div>
         </div>
-        <div class="line">
-            <div class="key" @click="select('4')" :style="keyStyle('4')">4</div>
-            <div class="key" @click="select('5')" :style="keyStyle('5')">5</div>
-            <div class="key" @click="select('6')" :style="keyStyle('6')">6</div>
-        </div>
-        <div class="line">
-            <div class="key" @click="select('7')" :style="keyStyle('7')">7</div>
-            <div class="key" @click="select('8')" :style="keyStyle('8')">8</div>
-            <div class="key" @click="select('9')" :style="keyStyle('9')">9</div>
-        </div>
-        <div class="line">
-            <div class="key"></div>
-            <div class="key" @click="select('0')" :style="keyStyle('0')">0</div>
-            <div class="key"></div>
-        </div>
-        <div class="score">得分：{{ score }}</div>
     </my-page>
 </template>
 

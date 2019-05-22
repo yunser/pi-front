@@ -1,16 +1,18 @@
 <template>
     <my-page title="圆周率">
-        <div class="tool-list">
-            <div class="mu-paper list-item mu-paper-round mu-paper-1" 
-                v-for="app in apps">
-                <router-link class="link" :to="app.to">
-                    <img :src="app.icon" class="img">
-                    <div class="info">
-                        <h3 class="text">{{ app.name }}</h3>
-                        <div class="desc">{{ app.desc }}</div>
-                    </div>
-                    <i class="icon icon-heart"></i>
-                </router-link>
+        <div class="common-container container">
+            <div class="tool-list">
+                <div class="mu-paper list-item mu-paper-round mu-paper-1" 
+                    v-for="app in apps">
+                    <router-link class="link" :to="app.to">
+                        <img :src="app.icon" class="img">
+                        <div class="info">
+                            <h3 class="text">{{ app.name }}</h3>
+                            <div class="desc">{{ app.desc }}</div>
+                        </div>
+                        <i class="icon icon-heart"></i>
+                    </router-link>
+                </div>
             </div>
         </div>
     </my-page>

@@ -1,19 +1,21 @@
 <template>
     <my-page title="查找 π 的第几位" :page="page">
-        <div>
-            <ui-text-field v-model.number="number" type="number" label="位数" hintText="1 到 1 亿" />
+        <div class="common-container container">
+            <div>
+                <ui-text-field v-model.number="number" type="number" label="位数" hintText="1 到 1 亿" />
+            </div>
+            <div class="btns">
+                <ui-raised-button primary label="查找" @click="calculator" />
+            </div>
+            <div class="ui-loading" v-if="loading">
+                <ui-circular-progress :size="24"/>
+            </div>
+            <ui-article class="result" v-if="result && result !== -1">
+                <p> 圆周率小数位数的第 {{ result.index }} 位是 “{{ result.content }}”。</p>
+                <p>π = 3.<span v-if="result.index > 11">……</span>{{ result.prev }}<strong class="strong">{{ result.content }}</strong>{{ result.next }}……</p>
+            </ui-article>
+            <p v-if="result === -1">系统出错</p>
         </div>
-        <div class="btns">
-            <ui-raised-button primary label="查找" @click="calculator" />
-        </div>
-        <div class="ui-loading" v-if="loading">
-            <ui-circular-progress :size="24"/>
-        </div>
-        <ui-article class="result" v-if="result && result !== -1">
-            <p> 圆周率小数位数的第 {{ result.index }} 位是 “{{ result.content }}”。</p>
-            <p>π = 3.<span v-if="result.index > 11">……</span>{{ result.prev }}<strong class="strong">{{ result.content }}</strong>{{ result.next }}……</p>
-        </ui-article>
-        <p v-if="result === -1">系统出错</p>
     </my-page>
 </template>
 
@@ -30,7 +32,9 @@
                         {
                             type: 'icon',
                             icon: 'help',
-                            to: '/help'
+                            href: 'https://project.yunser.com/products/b9484c006aa211e9b4d1bd0d5567c0e9',
+                            target: '_blank',
+                            title: '帮助'
                         }
                     ]
                 }

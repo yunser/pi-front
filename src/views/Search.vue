@@ -1,19 +1,21 @@
 <template>
     <my-page title="搜索" :page="page">
-        <div>
-            <ui-text-field v-model="number" label="数字" hintText="输入一串数字" />
+        <div class="common-container container">
+            <div>
+                <ui-text-field v-model="number" type="number" label="数字" hintText="输入一串数字" />
+            </div>
+            <div class="btns">
+                <ui-raised-button primary label="查找" @click="calculator" />
+            </div>
+            <div class="ui-loading" v-if="loading">
+                <ui-circular-progress :size="24"/>
+            </div>
+            <ui-article class="result" v-if="result && result !== -1">
+                <p> “{{ result.content }}” 在圆周率小数位数的第 {{ result.index }} 位。</p>
+                <p>π = 3.<span v-if="result.index > 11">……</span>{{ result.prev }}<strong class="strong">{{ result.content }}</strong>{{ result.next }}……</p>
+            </ui-article>
+            <p v-if="result === -1">在圆周率前 1 亿位中找不到这串数字</p>
         </div>
-        <div class="btns">
-            <ui-raised-button primary label="查找" @click="calculator" />
-        </div>
-        <div class="ui-loading" v-if="loading">
-            <ui-circular-progress :size="24"/>
-        </div>
-        <ui-article class="result" v-if="result && result !== -1">
-            <p> “{{ result.content }}” 在圆周率小数位数的第 {{ result.index }} 位。</p>
-            <p>π = 3.<span v-if="result.index > 11">……</span>{{ result.prev }}<strong class="strong">{{ result.content }}</strong>{{ result.next }}……</p>
-        </ui-article>
-        <p v-if="result === -1">在圆周率前 1 亿位中找不到这串数字</p>
     </my-page>
 </template>
 
